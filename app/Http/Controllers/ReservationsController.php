@@ -104,18 +104,10 @@ class ReservationsController extends Controller
     }
 
     public function index(){
-        $reservation = Reservation::paginate(3);
+        $reservation = Reservation::orderBy('visitDate', 'ASC')
+                        ->orderBy('hourDate', 'ASC')
+                        ->paginate(3);
 
         return view('reservation', ['reservations' => $reservation, 'date' => '']);
-    }
-
-    public function search(Request $request){
-        $date = $request -> get('date');
-
-        //zabezpieczenie przed ''
-        if(is_null($date)){ return redirect('/reservation'); }
-
-        $reservation = Reservation::where('visitDate', '=', $date)->paginate(3);
-        return view('/reservation', ['reservations' => $reservation, 'date' => $date]);
     }
 }

@@ -24,13 +24,6 @@
                 <div class="text-center">
                     <a href="/reservation/create/" class="btn btn-secondary btn-lg">Dodaj nową wizytę</a>
                 </div>
-                    <div class="d-flex justify-content-end">
-                    <form id="searchDate" action="/reservation/date/" method="post">
-                        @csrf
-                        <input type="date" name="date" id="date" value="{{ $date }}">
-                        <button class="btn btn-primary">Szukaj</button>
-                    </form>
-                </div>
 
                 @foreach ($reservations as $reservation)
                     <div class="d-flex shadow p-3 mb-5 mt-3 bg-body rounded">
