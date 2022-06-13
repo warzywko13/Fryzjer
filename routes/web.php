@@ -30,7 +30,7 @@ Route::controller(App\Http\Controllers\ReservationController::class)->group(func
     Route::post('/reservation/store', [ReservationsController::class, 'addOrUpdate']);
     Route::post('/reservation/update/{slug}', [ReservationsController::class, 'addOrUpdate']);
     Route::delete('/reservation/delete/{slug}', [ReservationsController::class, 'delete']);
-    Route::get('/reservation/searchDate', [ReservationsController::class, 'search']);
+    Route::post('/reservation/date', [ReservationsController::class, 'search']);
 });
 
 Auth::routes();

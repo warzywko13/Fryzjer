@@ -25,7 +25,7 @@
                     <a href="/reservation/create/" class="btn btn-secondary btn-lg">Dodaj nową wizytę</a>
                 </div>
                     <div class="d-flex justify-content-end">
-                    <form id="searchDate" action="/reservation/searchDate/" method="get">
+                    <form id="searchDate" action="/reservation/date/" method="post">
                         @csrf
                         <input type="date" name="date" id="date" value="{{ $date }}">
                         <button class="btn btn-primary">Szukaj</button>
