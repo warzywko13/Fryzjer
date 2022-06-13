@@ -27,7 +27,7 @@
                     <div class="d-flex justify-content-end">
                     <form id="searchDate" action="/reservation/searchDate/" method="get">
                         @csrf
-                        <input type="date" name="date" id="date" value="{{old('date')}}">
+                        <input type="date" name="date" id="date" value="{{ $date }}">
                         <button class="btn btn-primary">Szukaj</button>
                     </form>
                 </div>

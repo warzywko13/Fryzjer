@@ -115,6 +115,6 @@ class ReservationsController extends Controller
         $date = $request -> date;
         $reservation = Reservation::where('visitDate', '=', $date)->paginate(3);
 
-        return view('/reservation', ['reservations' => $reservation]);
+        return view('/reservation', ['reservations' => $reservation, 'date' => $date]);
     }
 }
