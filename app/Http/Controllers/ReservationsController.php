@@ -40,7 +40,10 @@ class ReservationsController extends Controller
                 ->withErrors(['msg' => 'Błąd. Rezerwacja na wskazaną godzinę jest już zajęta. Jeden zabieg zajmuje godzinę!']);
             }
 
-            $result = Reservation::findOrFail($id) -> where('user', $user) -> update([
+            $result = Reservation::where([
+                ['user', '=', $user],
+                ['id', '=', $id]
+            ]) -> update([
                 'user' => $user,
                 'visitDate' => $visitDate,
                 'hourDate' => $hourDate,
